@@ -1,179 +1,824 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Subhasis Patnaik | Process Lead, AI Financial Data Operations</title>
-<meta name="description" content="Subhasis Patnaik turns U.S. credit agreements into structured data. Process Lead at Forage AI with 6+ years in financial operations and data. Based in India (IST), open to remote roles.">
-<link rel="canonical" href="https://subhasispatnaik08.github.io/subhasis-portfolio/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Subhasis Patnaik | Process Lead, AI Financial Data Operations">
-<meta property="og:description" content="I turn U.S. credit agreements into data that analysts and AI can trust.">
-<meta property="og:url" content="https://subhasispatnaik08.github.io/subhasis-portfolio/">
-<meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#101c28">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23101c28'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23f6e08a' text-anchor='middle'%3ESP%3C/text%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Subhasis Patnaik","jobTitle":"Process Lead, AI Financial Data Operations","worksFor":{"@type":"Organization","name":"Forage AI"},"url":"https://subhasispatnaik08.github.io/subhasis-portfolio/","sameAs":["https://www.linkedin.com/in/subhasis-patnaik/"],"knowsAbout":["U.S. credit agreements","Covenant analysis","Financial data extraction","LLM prompt engineering","Loan operations"]}</script>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Subhasis Patnaik | Process Lead, AI Financial Data Operations</title>
+  <meta name="description" content="Subhasis Patnaik turns U.S. credit agreements into structured data. Process Lead at Forage AI with 6+ years in financial operations and data. Based in India (IST), open to remote roles.">
+  <link rel="canonical" href="https://subhasispatnaik08.github.io/subhasis-portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Subhasis Patnaik | Process Lead, AI Financial Data Operations">
+  <meta property="og:description" content="I turn U.S. credit agreements into data that analysts and AI can trust.">
+  <meta property="og:url" content="https://subhasispatnaik08.github.io/subhasis-portfolio/">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#f8fafc">
+  
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23101c28'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23f6e08a' text-anchor='middle'%3ESP%3C/text%3E%3C/svg%3E">
+  
+  <!-- Google Fonts: Inter and Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Subhasis Patnaik","jobTitle":"Process Lead, AI Financial Data Operations","worksFor":{"@type":"Organization","name":"Forage AI"},"url":"https://subhasispatnaik08.github.io/subhasis-portfolio/","sameAs":["https://www.linkedin.com/in/subhasis-patnaik/"],"knowsAbout":["U.S. credit agreements","Covenant analysis","Financial data extraction","LLM prompt engineering","Loan operations"]}</script>
+
+  <style>
+    :root {
+      /* Core Colors */
+      --paper: #f8fafc;
+      --paper-alt: #f1f5f9;
+      --ink: #0f172a;
+      --muted: #475569;
+      --rule: #e2e8f0;
+      
+      /* Accents */
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --hl: #fef08a;
+      --hl-ink: #854d0e;
+      
+      /* Dark Panel / Code Block */
+      --panel: #0f172a;
+      --panel-ink: #e2e8f0;
+      --panel-mute: #94a3b8;
+      
+      /* Cards */
+      --card-bg: #ffffff;
+      
+      /* Shadows & Radii */
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-card: 0 10px 40px -10px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 20px 40px -10px rgba(37, 99, 235, 0.15);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+
+      /* Typography */
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      
+      /* Animation Timing */
+      --easing: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; }
+    
+    @media (prefers-reduced-motion: no-preference) { 
+      html { scroll-behavior: smooth; } 
+    }
+    
+    body { 
+      margin: 0; 
+      background: var(--paper); 
+      color: var(--ink); 
+      font: 1rem/1.7 var(--sans); 
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    section[id] { scroll-margin-top: 100px; }
+    
+    .wrap { 
+      width: min(1120px, calc(100% - 48px)); 
+      margin-inline: auto; 
+    }
+    
+    a { 
+      color: var(--accent); 
+      text-decoration: none; 
+      transition: color 0.2s ease;
+    }
+    
+    a:hover { color: var(--accent-hover); }
+    
+    :focus-visible { 
+      outline: 3px solid var(--accent); 
+      outline-offset: 3px; 
+      border-radius: 4px; 
+    }
+    
+    .skip { 
+      position: absolute; left: -999px; top: 16px; 
+      background: var(--accent); color: #fff; 
+      padding: 12px 20px; border-radius: var(--radius-sm); 
+      z-index: 100; font-weight: 600;
+    }
+    
+    .skip:focus { left: 16px; }
+    
+    h1, h2, h3 { 
+      font-family: var(--serif); 
+      font-weight: 700; 
+      line-height: 1.15; 
+      margin: 0; 
+      color: var(--ink);
+    }
+
+    /* Glassmorphism Navigation */
+    .nav { 
+      position: sticky; top: 0; z-index: 50; 
+      background: rgba(248, 250, 252, 0.75); 
+      backdrop-filter: blur(16px); 
+      -webkit-backdrop-filter: blur(16px); 
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+      transition: all 0.3s ease;
+    }
+    
+    .nav-in { 
+      height: 72px; display: flex; 
+      align-items: center; justify-content: space-between; 
+      position: relative; 
+    }
+    
+    .brand { 
+      font: 700 1.25rem var(--serif); 
+      color: var(--ink); 
+      letter-spacing: -0.01em;
+    }
+    
+    .site-nav { display: flex; gap: 32px; align-items: center; }
+    
+    .site-nav a { 
+      color: var(--muted); 
+      font-weight: 500; 
+      font-size: 0.95rem; 
+      position: relative;
+    }
+    
+    .site-nav a:not(.pill)::after {
+      content: ''; position: absolute;
+      width: 0; height: 2px;
+      bottom: -4px; left: 0;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+    }
+    
+    .site-nav a:hover:not(.pill) { color: var(--ink); }
+    .site-nav a:hover:not(.pill)::after { width: 100%; }
+    
+    .site-nav a[aria-current="true"]:not(.pill) { color: var(--ink); }
+    .site-nav a[aria-current="true"]:not(.pill)::after { width: 100%; }
+    
+    .site-nav .pill { 
+      border: 1px solid var(--rule); 
+      color: var(--ink); 
+      padding: 8px 20px; 
+      border-radius: 999px;
+      transition: all 0.3s var(--easing);
+      background: var(--card-bg);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .site-nav .pill:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .menu-btn { 
+      display: none; background: var(--card-bg); 
+      border: 1px solid var(--rule); border-radius: var(--radius-sm); 
+      padding: 8px 16px; font: 500 0.95rem var(--sans); 
+      color: var(--ink); cursor: pointer;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Hero Section */
+    .hero { padding: 96px 0 80px; overflow: hidden; }
+    .hero-grid { 
+      display: grid; grid-template-columns: 1.15fr 0.85fr; 
+      gap: 64px; align-items: center; 
+    }
+    
+    .role { 
+      display: inline-block;
+      margin: 0 0 20px; color: var(--accent); 
+      font-weight: 600; font-size: 0.85rem;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      background: rgba(37, 99, 235, 0.1);
+      padding: 6px 14px; border-radius: 999px;
+    }
+    
+    .hero h1 { 
+      font-size: clamp(2.5rem, 5vw, 4rem); 
+      letter-spacing: -0.02em; 
+    }
+    
+    .lead { 
+      font-size: 1.15rem; color: var(--muted); 
+      max-width: 54ch; margin: 24px 0 0; 
+      line-height: 1.8;
+    }
+    
+    .actions { display: flex; flex-wrap: wrap; gap: 16px; margin: 40px 0 0; }
+    
+    .btn { 
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 28px; border: 1px solid var(--rule); 
+      border-radius: 999px; color: var(--ink); 
+      font-weight: 600; font-size: 1rem;
+      background: var(--card-bg); box-shadow: var(--shadow-sm);
+      transition: all 0.3s var(--easing);
+    }
+    
+    .btn:hover { 
+      border-color: var(--ink); 
+      transform: translateY(-2px); 
+      box-shadow: var(--shadow-md); 
+    }
+    
+    .btn.solid { 
+      background: var(--accent); color: #fff; 
+      border-color: var(--accent); box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+    }
+    
+    .btn.solid:hover { 
+      background: var(--accent-hover); 
+      border-color: var(--accent-hover);
+      box-shadow: 0 6px 20px 0 rgba(37, 99, 235, 0.39);
+      transform: translateY(-2px);
+    }
+    
+    .avail { 
+      display: flex; align-items: center; gap: 8px;
+      margin: 24px 0 0; font-size: 0.9rem; color: var(--muted); 
+    }
+    .avail::before {
+      content: ''; display: inline-block; width: 8px; height: 8px;
+      background-color: #10b981; border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    /* Modern Terminal / Code Demo */
+    .demo { 
+      margin: 0; background: var(--panel); 
+      border-radius: var(--radius-md); padding: 0; 
+      box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative; overflow: hidden;
+    }
+    
+    .demo-header {
+      background: rgba(255,255,255,0.05); padding: 12px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex; gap: 8px;
+    }
+    
+    .demo-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .demo-dot.red { background: #ff5f56; }
+    .demo-dot.yellow { background: #ffbd2e; }
+    .demo-dot.green { background: #27c93f; }
+    
+    .demo-content { padding: 32px 32px 24px; }
+    
+    .clause { 
+      margin: 0 0 24px; font: 1.05rem/1.8 var(--serif); 
+      color: #f1f5f9; 
+    }
+    
+    .clause mark { 
+      background: var(--hl); color: var(--hl-ink); 
+      padding: 2px 6px; border-radius: 4px; font-weight: 500;
+    }
+    
+    .out { 
+      margin: 0; padding: 20px; background: rgba(0, 0, 0, 0.3); 
+      border-radius: var(--radius-sm); border-left: 3px solid var(--accent); 
+      font: 0.9rem/1.8 var(--mono); color: var(--panel-ink); 
+      overflow-x: auto;
+    }
+    
+    .demo figcaption { 
+      margin-top: 16px; font-size: 0.85rem; color: var(--panel-mute); 
+      display: flex; align-items: center; gap: 6px;
+    }
+
+    /* Stats / Proof Section */
+    .proof { 
+      display: grid; grid-template-columns: repeat(4, 1fr); 
+      gap: 24px; margin: 80px 0 0; 
+      padding-top: 48px; border-top: 1px solid var(--rule); 
+    }
+    
+    .proof div { 
+      background: var(--card-bg); padding: 24px; 
+      border-radius: var(--radius-md); box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--easing), box-shadow 0.3s var(--easing);
+    }
+    
+    .proof div:hover {
+      transform: translateY(-4px); box-shadow: var(--shadow-hover);
+    }
+    
+    .proof dt { font: 700 1.75rem/1.2 var(--serif); color: var(--accent); }
+    .proof dd { margin: 8px 0 0; font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
+
+    /* General Sections */
+    .sec { padding: 100px 0; }
+    .sec.alt { background: var(--paper-alt); }
+    
+    .sec-header { margin-bottom: 48px; }
+    .sec h2 { font-size: clamp(2rem, 3.5vw, 2.5rem); margin-bottom: 12px; }
+    .sub { color: var(--muted); margin: 0; max-width: 64ch; font-size: 1.1rem; }
+
+    /* Case Studies (Cards) */
+    .case { 
+      background: var(--card-bg); padding: 40px; 
+      border-radius: var(--radius-md); box-shadow: var(--shadow-card);
+      margin-bottom: 32px; border: 1px solid var(--rule);
+      transition: transform 0.3s var(--easing), box-shadow 0.3s var(--easing);
+      max-width: 900px;
+    }
+    
+    .case:hover { box-shadow: var(--shadow-hover); }
+    .case h3 { font-size: 1.5rem; margin-bottom: 8px; }
+    
+    .res { margin: 0 0 24px; color: var(--muted); font-size: 1.05rem; }
+    .res strong { color: var(--ink); font-weight: 600; }
+    
+    details { 
+      border: 1px solid var(--rule); border-radius: var(--radius-sm); 
+      background: var(--paper); overflow: hidden;
+      transition: background 0.2s ease;
+    }
+    details:hover { background: #f1f5f9; }
+    
+    summary { 
+      cursor: pointer; padding: 16px 20px; font-weight: 600; 
+      font-size: 1rem; color: var(--ink); user-select: none;
+    }
+    
+    details[open] summary { border-bottom: 1px solid var(--rule); background: #fff; }
+    details[open] { background: #fff; }
+    
+    .body { padding: 8px 20px 24px; font-size: 1rem; color: var(--muted); }
+    .body p { margin: 16px 0 0; }
+    
+    .two { 
+      list-style: none; padding: 0; margin: 24px 0 0; 
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; 
+    }
+    
+    .two li { 
+      background: var(--paper); padding: 16px 20px; 
+      border-radius: var(--radius-sm); border-left: 4px solid var(--accent); 
+    }
+    .two strong { color: var(--ink); display: block; margin-bottom: 4px; }
+
+    /* Timeline (Experience) */
+    .tl { 
+      list-style: none; margin: 40px 0 0; padding: 0 0 0 28px; 
+      border-left: 2px solid var(--rule); max-width: 900px; 
+    }
+    
+    .tl li { position: relative; padding-bottom: 48px; }
+    .tl li:last-child { padding-bottom: 0; }
+    
+    .tl li::before { 
+      content: ""; position: absolute; left: -36px; top: 4px; 
+      width: 16px; height: 16px; border-radius: 50%; 
+      background: #fff; border: 4px solid var(--accent); 
+      box-shadow: 0 0 0 4px var(--paper-alt);
+    }
+    
+    .when { margin: 0 0 4px; font-size: 0.9rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .tl h3 { font-size: 1.4rem; margin-top: 4px; }
+    .org { margin: 4px 0 16px; font-size: 1rem; font-weight: 500; color: var(--accent); }
+    
+    .tl ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .tl li li { padding: 0 0 10px; position: static; }
+    .tl li li::before { display: none; }
+
+    /* Credentials & Skills */
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    .cols h2 { font-size: 1.75rem; margin-top: 0; padding-bottom: 16px; border-bottom: 1px solid var(--rule); margin-bottom: 24px; }
+    
+    .plain { padding-left: 20px; margin: 0; color: var(--muted); }
+    .plain li { padding-bottom: 8px; }
+    
+    .skills dt { font-weight: 600; margin-top: 24px; color: var(--ink); font-size: 1.1rem; }
+    .skills dd { margin: 6px 0 0; color: var(--muted); line-height: 1.6; }
+
+    /* Notes */
+    .note { 
+      background: var(--card-bg); padding: 32px; 
+      border-radius: var(--radius-md); box-shadow: var(--shadow-card);
+      margin-bottom: 24px; border: 1px solid var(--rule);
+      max-width: 900px; transition: transform 0.3s var(--easing);
+    }
+    .note:hover { transform: translateY(-4px); }
+    .note h3 { font-size: 1.4rem; margin-bottom: 12px; }
+    .note p { margin: 0 0 16px; color: var(--muted); }
+    .note p:last-child { margin-bottom: 0; }
+
+    /* Contact / Footer */
+    .contact { 
+      background: var(--ink); color: #fff; 
+      border-radius: var(--radius-lg); margin: 40px auto 80px;
+      width: min(1120px, calc(100% - 48px)); padding: 80px 60px;
+      position: relative; overflow: hidden;
+    }
+    
+    .contact::before {
+      content: ''; position: absolute; top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at center, rgba(37,99,235,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    
+    .contact h2 { color: #fff; }
+    .contact p { max-width: 58ch; color: var(--panel-mute); font-size: 1.1rem; margin-bottom: 32px; position: relative;}
+    
+    .contact .btn { 
+      background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff; 
+      position: relative;
+    }
+    .contact .btn:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3); }
+    .contact .btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .contact .btn.solid:hover { background: var(--accent-hover); }
+
+    footer { padding: 32px 0; font-size: 0.9rem; color: var(--muted); text-align: center; }
+
+    /* Media Queries */
+    @media(max-width: 960px){
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .demo { max-width: 100%; }
+      .proof { grid-template-columns: 1fr 1fr; }
+      .cols { grid-template-columns: 1fr; gap: 48px; }
+    }
+    
+    @media(max-width: 760px){
+      .menu-btn { display: block; }
+      .site-nav { 
+        display: none; position: absolute; top: 72px; left: -24px; right: -24px; 
+        flex-direction: column; align-items: stretch; gap: 0; 
+        background: rgba(255,255,255,0.98); backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--rule); padding: 16px 24px 24px;
+        box-shadow: var(--shadow-md);
+      }
+      .site-nav.open { display: flex; }
+      .site-nav a { padding: 16px 0; font-size: 1.05rem; border-bottom: 1px solid var(--rule); }
+      .site-nav a:last-child { border-bottom: none; }
+      .site-nav a::after { display: none; }
+      .site-nav .pill { 
+        border: 1px solid var(--rule); padding: 12px; margin-top: 16px; 
+        text-align: center; border-radius: var(--radius-sm);
+      }
+      .hero { padding: 48px 0 40px; }
+      .sec { padding: 64px 0; }
+      .two { grid-template-columns: 1fr; }
+      .contact { padding: 48px 32px; margin: 24px auto 48px; border-radius: var(--radius-md); }
+    }
+    
+    @media(max-width: 480px){
+      .proof { grid-template-columns: 1fr; }
+      .demo-content { padding: 24px 20px 20px; }
+      .hero h1 { font-size: 2.25rem; }
+    }
+    
+    @media print{
+      .nav, .actions, .skip { display: none; }
+      .contact { background: #fff; color: #000; border: 1px solid #ccc; padding: 32px; }
+      .contact h2, .contact p { color: #000; }
+      .demo { box-shadow: none; border: 1px solid #ccc; background: #fff; color: #000; }
+      .clause, .out, .demo figcaption { color: #000; background: transparent; }
+      .out { border: 1px solid #eee; }
+      body { background: #fff; }
+      .sec.alt { background: #fff; border-top: 1px solid #eee; }
+      .case, .note, .proof div { box-shadow: none; border: 1px solid #eee; }
+    }
+
+    /* Summary Accordion Icon */
+    summary { display: flex; justify-content: space-between; align-items: center; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { 
+      content: ""; width: 20px; height: 20px; 
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23475569' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+      transition: transform 0.3s var(--easing);
+    }
+    details[open] summary::after { transform: rotate(180deg); }
+
+    /* Scroll Reveal Animation Classes */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* Details Native Interpolation Support */
+    @supports (interpolate-size: allow-keywords) {
+      @media(prefers-reduced-motion: no-preference) {
+        details { interpolate-size: allow-keywords; }
+        details::details-content { 
+          block-size: 0; overflow: clip; 
+          transition: block-size 0.3s ease, content-visibility 0.3s ease allow-discrete; 
+        }
+        details[open]::details-content { block-size: auto; }
+      }
+    }
+
+    /* Custom Terminal Animations */
+    @keyframes lit { from { background-color: transparent; color: #f1f5f9; } to { background-color: var(--hl); color: var(--hl-ink); } }
+    @keyframes line { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: translateX(0); } }
+    
+    @media(prefers-reduced-motion: no-preference) {
+      .clause mark { animation: lit 0.5s ease both; }
+      .clause mark:nth-of-type(1) { animation-delay: 0.6s; }
+      .clause mark:nth-of-type(2) { animation-delay: 1.1s; }
+      .out span { display: block; animation: line 0.4s ease both; }
+      .out span:nth-child(1) { animation-delay: 1.5s; }
+      .out span:nth-child(2) { animation-delay: 1.7s; }
+      .out span:nth-child(3) { animation-delay: 1.9s; }
+      .out span:nth-child(4) { animation-delay: 2.1s; }
+      .out span:nth-child(5) { animation-delay: 2.3s; }
+    }
+  </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="#top">Subhasis Patnaik</a>
-    <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav class="site-nav" id="site-nav" aria-label="Main">
-      <a href="#work">Work</a><a href="#experience">Experience</a><a href="#credentials">Credentials</a><a href="#notes">Notes</a><a class="pill" href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+  <a class="skip" href="#main">Skip to content</a>
+  
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top">Subhasis Patnaik</a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#notes">Notes</a>
+        <a class="pill" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<main id="main">
-<section class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="role">Process Lead, AI Financial Data Operations at Forage AI</p>
-      <h1>I turn U.S. credit agreements into data that analysts and AI can trust.</h1>
-      <p class="lead">I read the covenants, define how each provision should be captured, and make sure the extracted data matches the contract. Six years across loan operations, financial documents and AI data quality.</p>
-      <div class="actions">
-        <a class="btn solid" href="mailto:subhasispatnaik08@gmail.com">Email me</a>
-        <a class="btn" href="Subhasis-Patnaik-CV.pdf">Download CV</a>
-        <a class="btn" href="https://www.linkedin.com/in/subhasis-patnaik/" target="_blank" rel="noopener">LinkedIn</a>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <p class="role">Process Lead, AI Financial Data</p>
+          <h1>I turn U.S. credit agreements into data that analysts and AI can trust.</h1>
+          <p class="lead">I read the covenants, define how each provision should be captured, and make sure the extracted data matches the contract. Six years across loan operations, financial documents and AI data quality.</p>
+          <div class="actions">
+            <a class="btn solid" href="mailto:subhasispatnaik08@gmail.com">Email me</a>
+            <a class="btn" href="Subhasis-Patnaik-CV.pdf">Download CV</a>
+            <a class="btn" href="https://www.linkedin.com/in/subhasis-patnaik/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+          <p class="avail">Based in India (IST). Open to remote roles.</p>
+        </div>
+        
+        <figure class="demo reveal" aria-label="Illustrative example of a clause turned into structured data" style="transition-delay: 0.15s">
+          <div class="demo-header">
+            <div class="demo-dot red"></div>
+            <div class="demo-dot yellow"></div>
+            <div class="demo-dot green"></div>
+          </div>
+          <div class="demo-content">
+            <p class="clause">The Borrower may incur Indebtedness in an aggregate principal amount not to exceed <mark>the greater of $50,000,000 and 25% of Consolidated EBITDA</mark>, <mark>excluding Indebtedness incurred under the Ratio Basket</mark>.</p>
+            <pre class="out" aria-label="Structured output"><span>provision  : general_debt_basket</span><span>fixed_cap  : 50,000,000</span><span>grower     : 25% of EBITDA</span><span>cap_logic  : greater_of</span><span>exclusion  : ratio_basket_debt</span></pre>
+            <figcaption>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              Illustrative, invented clause. Not from any client document.
+            </figcaption>
+          </div>
+        </figure>
       </div>
-      <p class="avail">Based in India (IST). Open to remote roles in credit, lending operations and financial data.</p>
-    </div>
-    <figure class="demo" aria-label="Illustrative example of a clause turned into structured data">
-      <p class="clause">The Borrower may incur Indebtedness in an aggregate principal amount not to exceed <mark>the greater of $50,000,000 and 25% of Consolidated EBITDA</mark>, <mark>excluding Indebtedness incurred under the Ratio Basket</mark>.</p>
-      <pre class="out" aria-label="Structured output"><span>provision   : general_debt_basket</span><span>fixed_cap   : 50,000,000</span><span>grower      : 25% of EBITDA</span><span>cap_logic   : greater_of</span><span>exclusion   : ratio_basket_debt</span></pre>
-      <figcaption>Illustrative, invented clause. Not from any client document.</figcaption>
-    </figure>
-  </div>
-  <div class="wrap">
-    <dl class="proof">
-      <div><dt>15 to under 5 min</dt><dd>Fund-name matching per Schedule of Investments document, after I built a validator</dd></div>
-      <div><dt>78% to 92%</dt><dd>ML extraction accuracy, through annotation and QA feedback loops</dd></div>
-      <div><dt>35% less QA effort</dt><dd>Reconciling 1M+ records with VBA and Google Apps Script</dd></div>
-      <div><dt>50% faster onboarding</dt><dd>From SOPs and covenant interpretation guides</dd></div>
-    </dl>
-  </div>
-</section>
+      
+      <div class="wrap reveal" style="transition-delay: 0.2s">
+        <dl class="proof">
+          <div><dt>15 to &lt;5 min</dt><dd>Fund-name matching per Schedule of Investments document via automated validator.</dd></div>
+          <div><dt>78% to 92%</dt><dd>ML extraction accuracy boost through precise annotation and QA feedback loops.</dd></div>
+          <div><dt>35% less QA</dt><dd>Effort saved by reconciling 1M+ records natively with VBA and Apps Script.</dd></div>
+          <div><dt>50% faster</dt><dd>Onboarding speeds via structured SOPs and covenant interpretation guides.</dd></div>
+        </dl>
+      </div>
+    </section>
 
-<section class="sec" id="work">
-  <div class="wrap">
-    <h2>Selected work</h2>
-    <p class="sub">Generalized to protect client confidentiality. No client names, internal fields or proprietary prompts.</p>
+    <section class="sec alt" id="work">
+      <div class="wrap">
+        <div class="sec-header reveal">
+          <h2>Selected work</h2>
+          <p class="sub">Generalized to protect client confidentiality. No client names, internal fields or proprietary prompts are shared.</p>
+        </div>
 
-    <article class="case">
-      <h3>Turning complex credit agreements into structured extraction rules</h3>
-      <p class="res"><strong>Result:</strong> 100+ hours of client knowledge transfer became the definitions, prompt rules and evaluation criteria that Operations, QA and Engineering built on.</p>
-      <details>
-        <summary>Read the case study</summary>
-        <div class="body">
-          <p>Credit agreements spread one provision across definitions, provisos, exceptions and cross-references. The job was to decide how that language should be read and represented as data, for both Private Credit and broadly syndicated loans.</p>
-          <p>I was the main bridge between the client and our Operations, QA and Engineering teams. I wrote definitions, prompt rules and business logic, built evaluation sheets with automated sanity checks, audited research outputs, and took ambiguous cases to the client expert for a ruling.</p>
-          <ul class="two">
-            <li><strong>Ratio testing.</strong> Testing frequency, borrower election rights, applicable baskets and exclusions.</li>
-            <li><strong>Debt definition.</strong> Tracing inclusions, embedded exclusions and separate carve-outs to a final treatment.</li>
-            <li><strong>J.Crew and trapdoor structures.</strong> Mechanics buried in subsidiary or investment provisions, not under an obvious heading.</li>
-            <li><strong>Basket sharing.</strong> How capacity is shared or reallocated across covenants without double counting.</li>
+        <article class="case reveal">
+          <h3>Turning complex credit agreements into structured extraction rules</h3>
+          <p class="res"><strong>Result:</strong> 100+ hours of client knowledge transfer became the definitions, prompt rules and evaluation criteria that Operations, QA and Engineering built on.</p>
+          <details>
+            <summary>Read the case study</summary>
+            <div class="body">
+              <p>Credit agreements spread one provision across definitions, provisos, exceptions and cross-references. The job was to decide how that language should be read and represented as data, for both Private Credit and broadly syndicated loans.</p>
+              <p>I was the main bridge between the client and our Operations, QA and Engineering teams. I wrote definitions, prompt rules and business logic, built evaluation sheets with automated sanity checks, audited research outputs, and took ambiguous cases to the client expert for a ruling.</p>
+              <ul class="two">
+                <li><strong>Ratio testing.</strong> Testing frequency, borrower election rights, applicable baskets and exclusions.</li>
+                <li><strong>Debt definition.</strong> Tracing inclusions, embedded exclusions and separate carve-outs to a final treatment.</li>
+                <li><strong>Trapdoor structures.</strong> Mechanics buried in subsidiary or investment provisions, not under an obvious heading.</li>
+                <li><strong>Basket sharing.</strong> How capacity is shared or reallocated across covenants without double counting.</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <article class="case reveal">
+          <h3>Finding why an AI model got a covenant wrong, then fixing the rule</h3>
+          <p class="res"><strong>Result:</strong> Individual extraction failures became reusable rules, examples and validation controls instead of one-off corrections.</p>
+          <details>
+            <summary>Read the case study</summary>
+            <div class="body">
+              <p>Typical failures: missing an exception, treating a carve-out as an inclusion, stopping at the main clause when a defined term held more of the answer.</p>
+              <p><strong>Example.</strong> On a mandatory-prepayment field that needed every applicable basket, the model found one inclusion in the main clause and stopped, or returned a single basket when several applied. I traced its reasoning back to the source text, found the faulty stopping logic, added explicit rules for following defined terms and capturing all selections, gave one-shot examples, and reran the extraction to confirm the fix.</p>
+              <p><strong>Controls added.</strong> Field validation so percentage and dropdown fields only accepted valid values. Reconciliation of manual research against a consolidated master dataset. Sanity checks that blocked data transfer when required conditions failed.</p>
+            </div>
+          </details>
+        </article>
+
+        <article class="case reveal">
+          <h3>Fund Name Validator: a small tool that removed a daily bottleneck</h3>
+          <p class="res"><strong>Result:</strong> Manual fund-name matching dropped from about 15 minutes to under 5 per document. QA adopted it for regular use.</p>
+          <details>
+            <summary>Read the case study</summary>
+            <div class="body">
+              <p>QA kept finding header rows, incomplete fund names and other errors in extracted fund names, and long Schedule of Investments lists made manual matching slow.</p>
+              <p>I built a Python and Streamlit app. QA uploads the client master list and the extraction output; the app flags exact, partial and no-match results, shows the matching master name alongside, and exports an Excel file for review. It was deployed so QA needed no local setup, and the team used it on sanitized data only. Code is maintained in GitHub.</p>
+            </div>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec" id="experience">
+      <div class="wrap">
+        <div class="sec-header reveal">
+          <h2>Experience</h2>
+        </div>
+        <ol class="tl">
+          <li class="reveal">
+            <p class="when">Oct 2025 to present</p>
+            <h3>Process Lead, AI Financial Data Operations</h3>
+            <p class="org">Forage AI (Remote)</p>
+            <ul>
+              <li>Own the covenant taxonomy, business rules and extraction logic for U.S. credit-agreement data used in credit-risk workflows.</li>
+              <li>Primary link between the client and our Operations, QA and Engineering teams, with zero delivery delays.</li>
+              <li>SOPs, covenant interpretation guides and taxonomy references cut onboarding time by 50%.</li>
+            </ul>
+          </li>
+          <li class="reveal">
+            <p class="when">Dec 2023 to Oct 2025</p>
+            <h3>Senior Data Specialist</h3>
+            <p class="org">Forage AI</p>
+            <ul>
+              <li>Led document classification and parsing work that improved structured-data accuracy by 22%.</li>
+              <li>Built VBA and Apps Script automation to reconcile 1M+ records, cutting QA effort by 35% for a six-member team.</li>
+              <li>Ran 50+ onboarding sessions and workshops, and supported demos and proofs of concept for three enterprise clients.</li>
+            </ul>
+          </li>
+          <li class="reveal">
+            <p class="when">Dec 2022 to Dec 2023</p>
+            <h3>Data Operations Analyst</h3>
+            <p class="org">Forage AI</p>
+            <ul>
+              <li>Structured 500+ financial documents a month, including credit agreements, private equity summaries, financial statements and Form 5500 schedules.</li>
+              <li>Raised ML extraction accuracy from 78% to 92% by annotating and reviewing model output.</li>
+              <li>Built a GPT and Tabula workaround for tables the in-house tools could not read, keeping client deliveries on schedule.</li>
+            </ul>
+          </li>
+          <li class="reveal">
+            <p class="when">Jun 2020 to Dec 2022</p>
+            <h3>U.S. Loan Operations Analyst II</h3>
+            <p class="org">Northern Trust, Bangalore</p>
+            <ul>
+              <li>Kept 99.7% accuracy across 300+ loan accounts and cleared 95% of GL exceptions within a 24-hour SLA.</li>
+              <li>Released a time-critical $23M closing wire before cutoff, and stopped an erroneous $8.5M wire at final authorization.</li>
+              <li>Insurance documentation reviews found discrepancies in 12% of vendor-processed files. Also handled escrow, flood, hazard and wind disbursements and tax-delinquency escalations.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec alt" id="credentials">
+      <div class="wrap cols">
+        <div class="reveal">
+          <h2>Certifications</h2>
+          <ul class="plain">
+            <li>Business Intelligence and Data Analyst, Corporate Finance Institute</li>
+            <li>SQL Fundamentals, Corporate Finance Institute</li>
+            <li>Corporate Financial Statement Analysis, LinkedIn Learning</li>
+            <li>Leveraging Gen AI in Finance and Accounting, LinkedIn Learning</li>
           </ul>
+          <h2 style="margin-top: 48px;">Education</h2>
+          <p class="plain">Bachelor of Commerce (Honors), Vikram Dev University, 2019</p>
         </div>
-      </details>
-    </article>
-
-    <article class="case">
-      <h3>Finding why an AI model got a covenant wrong, then fixing the rule</h3>
-      <p class="res"><strong>Result:</strong> Individual extraction failures became reusable rules, examples and validation controls instead of one-off corrections.</p>
-      <details>
-        <summary>Read the case study</summary>
-        <div class="body">
-          <p>Typical failures: missing an exception, treating a carve-out as an inclusion, stopping at the main clause when a defined term held more of the answer.</p>
-          <p><strong>Example.</strong> On a mandatory-prepayment field that needed every applicable basket, the model found one inclusion in the main clause and stopped, or returned a single basket when several applied. I traced its reasoning back to the source text, found the faulty stopping logic, added explicit rules for following defined terms and capturing all selections, gave one-shot examples, and reran the extraction to confirm the fix.</p>
-          <p><strong>Controls added.</strong> Field validation so percentage and dropdown fields only accepted valid values. Reconciliation of manual research against a consolidated master dataset. Sanity checks that blocked data transfer when required conditions failed.</p>
+        <div class="reveal" style="transition-delay: 0.15s">
+          <h2>Skills</h2>
+          <dl class="skills">
+            <dt>Credit and lending</dt>
+            <dd>Credit agreement analysis, covenants, loan servicing, GL reconciliation, ACH and wire investigations</dd>
+            <dt>Data and AI</dt>
+            <dd>LLM prompt engineering, intelligent document processing, structured extraction, AI output validation, taxonomy design</dd>
+            <dt>Process</dt>
+            <dd>SOPs, knowledge management, root cause analysis, UAT, cross-functional delivery</dd>
+            <dt>Tools</dt>
+            <dd>Excel, SQL, Power Query, VBA, Google Apps Script, Python, Jira, Confluence, Slack, Notion</dd>
+          </dl>
         </div>
-      </details>
-    </article>
+      </div>
+    </section>
 
-    <article class="case">
-      <h3>Fund Name Validator: a small tool that removed a daily bottleneck</h3>
-      <p class="res"><strong>Result:</strong> Manual fund-name matching dropped from about 15 minutes to under 5 per document. QA adopted it for regular use.</p>
-      <details>
-        <summary>Read the case study</summary>
-        <div class="body">
-          <p>QA kept finding header rows, incomplete fund names and other errors in extracted fund names, and long Schedule of Investments lists made manual matching slow.</p>
-          <p>I built a Python and Streamlit app. QA uploads the client master list and the extraction output; the app flags exact, partial and no-match results, shows the matching master name alongside, and exports an Excel file for review. It was deployed so QA needed no local setup, and the team used it on sanitized data only. Code is maintained in GitHub.</p>
+    <section class="sec" id="notes">
+      <div class="wrap">
+        <div class="sec-header reveal">
+          <h2>Notes</h2>
+          <p class="sub">Short explainers from the work. The examples are generalized and not taken from client documents.</p>
         </div>
-      </details>
-    </article>
-  </div>
-</section>
+        
+        <article class="note reveal">
+          <h3>Why "excluding" is the costliest word in a debt basket</h3>
+          <p>A cap of the greater of a fixed amount and a percentage of EBITDA reads cleanly. Then a parenthetical removes ratio debt from the count, and a separate section removes more. An extraction that reads only the main clause overstates capacity.</p>
+          <p>The fix is procedural: trace the definition, the parentheticals and the separate exclusions before deciding the final treatment.</p>
+        </article>
+        
+        <article class="note reveal">
+          <h3>When an AI model stops at the first answer</h3>
+          <p>In a clause that needs every applicable basket, one inclusion in the main clause can end the search while a defined term elsewhere holds the rest. Reading the model's reasoning against the source shows where it stopped.</p>
+          <p>The fix is a rule, such as follow defined terms and capture every selection, plus one example. It is not a patch for a single document.</p>
+        </article>
+      </div>
+    </section>
 
-<section class="sec alt" id="experience">
-  <div class="wrap">
-    <h2>Experience</h2>
-    <ol class="tl">
-      <li><p class="when">Oct 2025 to present</p><h3>Process Lead, AI Financial Data Operations</h3><p class="org">Forage AI, remote from India</p>
-        <ul><li>Own the covenant taxonomy, business rules and extraction logic for U.S. credit-agreement data used in credit-risk workflows.</li><li>Primary link between the client and our Operations, QA and Engineering teams, with zero delivery delays.</li><li>SOPs, covenant interpretation guides and taxonomy references cut onboarding time by 50%.</li></ul></li>
-      <li><p class="when">Dec 2023 to Oct 2025</p><h3>Senior Data Specialist</h3><p class="org">Forage AI</p>
-        <ul><li>Led document classification and parsing work that improved structured-data accuracy by 22%.</li><li>Built VBA and Apps Script automation to reconcile 1M+ records, cutting QA effort by 35% for a six-member team.</li><li>Ran 50+ onboarding sessions and workshops, and supported demos and proofs of concept for three enterprise clients.</li></ul></li>
-      <li><p class="when">Dec 2022 to Dec 2023</p><h3>Data Operations Analyst</h3><p class="org">Forage AI</p>
-        <ul><li>Structured 500+ financial documents a month, including credit agreements, private equity summaries, financial statements and Form 5500 schedules.</li><li>Raised ML extraction accuracy from 78% to 92% by annotating and reviewing model output.</li><li>Built a GPT and Tabula workaround for tables the in-house tools could not read, keeping client deliveries on schedule.</li></ul></li>
-      <li><p class="when">Jun 2020 to Dec 2022</p><h3>U.S. Loan Operations Analyst II</h3><p class="org">Northern Trust, Bangalore</p>
-        <ul><li>Kept 99.7% accuracy across 300+ loan accounts and cleared 95% of GL exceptions within a 24-hour SLA.</li><li>Released a time-critical $23M closing wire before cutoff, and stopped an erroneous $8.5M wire at final authorization.</li><li>Insurance documentation reviews found discrepancies in 12% of vendor-processed files. Also handled escrow, flood, hazard and wind disbursements and tax-delinquency escalations.</li></ul></li>
-    </ol>
-  </div>
-</section>
+    <section class="sec contact reveal" id="contact">
+      <div>
+        <h2>Let's talk</h2>
+        <p>I'm looking for remote roles where reading the contract and getting the data right is the job: credit analysis, lending operations, financial data and document intelligence.</p>
+        <div class="actions">
+          <a class="btn solid" href="mailto:subhasispatnaik08@gmail.com">subhasispatnaik08@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/subhasis-patnaik/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="Subhasis-Patnaik-CV.pdf">Download CV</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="wrap">© 2026 Subhasis Patnaik. Built for speed and clarity.</div>
+  </footer>
 
-<section class="sec" id="credentials">
-  <div class="wrap cols">
-    <div>
-      <h2>Certifications</h2>
-      <ul class="plain"><li>Business Intelligence and Data Analyst, Corporate Finance Institute</li><li>SQL Fundamentals, Corporate Finance Institute</li><li>Corporate Financial Statement Analysis, LinkedIn Learning</li><li>Leveraging Gen AI in Finance and Accounting, LinkedIn Learning</li></ul>
-      <h2>Education</h2>
-      <p>Bachelor of Commerce (Honors), Vikram Dev University, 2019</p>
-    </div>
-    <div>
-      <h2>Skills</h2>
-      <dl class="skills">
-        <dt>Credit and lending</dt><dd>Credit agreement analysis, covenants, loan servicing, GL reconciliation, ACH and wire investigations</dd>
-        <dt>Data and AI</dt><dd>LLM prompt engineering, intelligent document processing, structured extraction, AI output validation, taxonomy design</dd>
-        <dt>Process</dt><dd>SOPs, knowledge management, root cause analysis, UAT, cross-functional delivery</dd>
-        <dt>Tools</dt><dd>Excel, SQL, Power Query, VBA, Google Apps Script, Python, Jira, Confluence, Slack, Notion</dd>
-      </dl>
-    </div>
-  </div>
-</section>
+  <script>
+    // Mobile Menu Toggle
+    const btn = document.querySelector('.menu-btn');
+    const nav = document.getElementById('site-nav');
 
-<section class="sec alt" id="notes">
-  <div class="wrap">
-    <h2>Notes</h2>
-    <p class="sub">Short explainers from the work. The examples are generalized and not taken from client documents.</p>
-    <article class="note">
-      <h3>Why "excluding" is the costliest word in a debt basket</h3>
-      <p>A cap of the greater of a fixed amount and a percentage of EBITDA reads cleanly. Then a parenthetical removes ratio debt from the count, and a separate section removes more. An extraction that reads only the main clause overstates capacity.</p>
-      <p>The fix is procedural: trace the definition, the parentheticals and the separate exclusions before deciding the final treatment.</p>
-    </article>
-    <article class="note">
-      <h3>When an AI model stops at the first answer</h3>
-      <p>In a clause that needs every applicable basket, one inclusion in the main clause can end the search while a defined term elsewhere holds the rest. Reading the model's reasoning against the source shows where it stopped.</p>
-      <p>The fix is a rule, such as follow defined terms and capture every selection, plus one example. It is not a patch for a single document.</p>
-    </article>
-  </div>
-</section>
+    if (btn && nav) {
+      const setOpen = (open) => {
+        btn.setAttribute('aria-expanded', String(open));
+        btn.textContent = open ? 'Close' : 'Menu';
+        nav.classList.toggle('open', open);
+      };
+      btn.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+      nav.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('open')) { setOpen(false); btn.focus(); }
+      });
+      document.addEventListener('click', (e) => {
+        if (nav.classList.contains('open') && !e.target.closest('.nav')) setOpen(false);
+      });
+    }
 
-<section class="sec contact" id="contact">
-  <div class="wrap">
-    <h2>Let's talk</h2>
-    <p>I'm looking for remote roles where reading the contract and getting the data right is the job: credit analysis, lending operations, financial data and document intelligence.</p>
-    <div class="actions">
-      <a class="btn solid" href="mailto:subhasispatnaik08@gmail.com">subhasispatnaik08@gmail.com</a>
-      <a class="btn" href="https://www.linkedin.com/in/subhasis-patnaik/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="Subhasis-Patnaik-CV.pdf">Download CV</a>
-    </div>
-  </div>
-</section>
-</main>
-<footer><div class="wrap">© 2026 Subhasis Patnaik</div></footer>
-<script src="script.js"></script>
+    // Scroll Active Link Highlighting
+    const links = [...document.querySelectorAll('.site-nav a[href^="#"]')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    if ('IntersectionObserver' in window && sections.length) {
+      const mark = (id) => links.forEach(a => {
+        if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => { if (en.isIntersecting) mark(en.target.id); });
+      }, { rootMargin: '-20% 0px -75% 0px' });
+      
+      sections.forEach(s => io.observe(s));
+      
+      window.addEventListener('scroll', () => {
+        if (window.scrollY < 200) links.forEach(a => a.removeAttribute('aria-current'));
+        else if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) mark('contact');
+      }, { passive: true });
+    }
+
+    // Scroll Reveal Animations
+    if ('IntersectionObserver' in window) {
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Only animate once
+          }
+        });
+      }, { rootMargin: '0px 0px -15% 0px' }); // Triggers when 15% from bottom
+
+      revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+      // Fallback for older browsers: show everything immediately
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+    }
+  </script>
 </body>
 </html>
