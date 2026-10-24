@@ -44,11 +44,7 @@
     </div>
     <figure class="demo" aria-label="Illustrative example of a clause turned into structured data">
       <p class="clause">The Borrower may incur Indebtedness in an aggregate principal amount not to exceed <mark>the greater of $50,000,000 and 25% of Consolidated EBITDA</mark>, <mark>excluding Indebtedness incurred under the Ratio Basket</mark>.</p>
-      <pre class="out" aria-label="Structured output">provision   : general_debt_basket
-fixed_cap   : 50,000,000
-grower      : 25% of EBITDA
-cap_logic   : greater_of
-exclusion   : ratio_basket_debt</pre>
+      <pre class="out" aria-label="Structured output"><span>provision   : general_debt_basket</span><span>fixed_cap   : 50,000,000</span><span>grower      : 25% of EBITDA</span><span>cap_logic   : greater_of</span><span>exclusion   : ratio_basket_debt</span></pre>
       <figcaption>Illustrative, invented clause. Not from any client document.</figcaption>
     </figure>
   </div>
