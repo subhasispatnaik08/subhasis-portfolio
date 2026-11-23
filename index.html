@@ -577,11 +577,11 @@
     .tbl tfoot td { font-weight: 600; background: var(--paper); border-top: 1px solid var(--rule); border-bottom: none; }
 
     .shot { margin: 24px 0 0; }
-    .shot img {
-      display: block; width: 100%; max-width: 560px; height: auto;
+    .shot video {
+      display: block; width: 100%; max-width: 640px; height: auto;
       border: 1px solid var(--rule); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
     }
-    .shot figcaption { margin-top: 12px; font-size: 0.9rem; color: var(--muted); max-width: 560px; }
+    .shot figcaption { margin-top: 12px; font-size: 0.9rem; color: var(--muted); max-width: 640px; }
 
     .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 0; }
     .kpis div {
@@ -717,8 +717,8 @@
               <p>QA kept finding header rows, incomplete fund names and other errors in extracted fund names, and long Schedule of Investments lists made manual matching slow.</p>
               <p>I built a Python and Streamlit app. QA uploads the client master list and the extraction output; the app flags exact, partial and no-match results, shows the matching master name alongside, and exports an Excel file for review. It was deployed so QA needed no local setup, and the team used it on sanitized data only. Code is maintained in GitHub.</p>
               <figure class="shot">
-                <img src="fund-name-validator.png" width="760" height="896" loading="lazy" alt="Fund Name Validator interface: two upload steps for the master fund file and the extraction output, plus an adjustable similarity threshold set to 0.75 for partial matches.">
-                <figcaption>The validator&rsquo;s interface. QA uploads the two files and can tune the similarity threshold for partial matches (default 0.75). No client data shown.</figcaption>
+                <video src="fund-name-validator.mp4" poster="fund-name-validator-poster.jpg" width="1034" height="930" muted loop playsinline preload="none" aria-label="Screen recording of the Fund Name Validator: two files are uploaded, validation runs, and the results show 123 rows with 105 exact matches, 6 partial matches and 12 with no match, plus a button to download the highlighted Excel output."></video>
+                <figcaption>The validator in use: upload the two files, run validation, review the exact, partial and no-match counts, and download the highlighted Excel output.</figcaption>
               </figure>
             </div>
           </details>
@@ -1073,6 +1073,20 @@ ORDER BY pct_stressed DESC;</code></pre>
       // Fallback for older browsers: show everything immediately
       document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
     }
+  </script>
+  <script>
+    (function () {
+      var v = document.querySelector('.shot video');
+      if (!v) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) { v.controls = true; return; }
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          else { v.pause(); }
+        });
+      }, { threshold: 0.4 }).observe(v);
+    })();
   </script>
 </body>
 </html>
