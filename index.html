@@ -532,27 +532,56 @@
       .out span:nth-child(5) { animation-delay: 2.3s; }
     }
     /* V2 additions: reuse existing tokens and card language */
-    .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .proj {
-      background: var(--card-bg); padding: 32px; border-radius: var(--radius-md);
-      box-shadow: var(--shadow-card); border: 1px solid var(--rule);
-      transition: transform 0.3s var(--easing), box-shadow 0.3s var(--easing), opacity 0.8s var(--easing);
-    }
-    .proj:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-    .proj h3 { font-size: 1.3rem; margin-bottom: 20px; }
-    .proj ul { margin: 0; padding-left: 20px; color: var(--muted); }
-    .proj li { padding-bottom: 4px; }
-    .lbl {
-      margin: 20px 0 8px; font-size: 0.8rem; font-weight: 600; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.05em;
-    }
-    .proj h3 + .lbl { margin-top: 0; }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
     .tags span {
       font-size: 0.8rem; font-weight: 600; color: var(--accent);
       background: rgba(37, 99, 235, 0.1); padding: 4px 12px; border-radius: 999px;
     }
     .tl .tags { margin: 0 0 16px; }
+    .body .tags { margin-top: 24px; }
+    .lbl {
+      margin: 24px 0 0; font-size: 0.8rem; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .body .lbl { margin-top: 24px; }
+
+    .dataset {
+      background: var(--card-bg); border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent); border-radius: var(--radius-sm);
+      padding: 20px 24px; margin: 0 0 32px; max-width: 900px; color: var(--muted);
+    }
+
+    .sql {
+      margin: 12px 0 0; padding: 20px; background: var(--panel); color: var(--panel-ink);
+      border-radius: var(--radius-sm); font: 0.85rem/1.7 var(--mono);
+      overflow-x: auto; tab-size: 2;
+    }
+    .sql code { font: inherit; white-space: pre; }
+
+    .tbl-wrap {
+      margin: 16px 0 0; overflow-x: auto; background: var(--card-bg);
+      border: 1px solid var(--rule); border-radius: var(--radius-sm);
+    }
+    .tbl { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 480px; }
+    .tbl th, .tbl td {
+      padding: 10px 14px; text-align: right; white-space: nowrap;
+      border-bottom: 1px solid var(--rule); font-variant-numeric: tabular-nums;
+    }
+    .tbl th:first-child, .tbl td:first-child { text-align: left; }
+    .tbl thead th {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--muted); background: var(--paper);
+    }
+    .tbl td { color: var(--ink); }
+    .tbl tbody tr:last-child td { border-bottom: none; }
+    .tbl tfoot td { font-weight: 600; background: var(--paper); border-top: 1px solid var(--rule); border-bottom: none; }
+
+    .shot { margin: 24px 0 0; }
+    .shot img {
+      display: block; width: 100%; max-width: 560px; height: auto;
+      border: 1px solid var(--rule); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
+    }
+    .shot figcaption { margin-top: 12px; font-size: 0.9rem; color: var(--muted); max-width: 560px; }
 
     .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 0; }
     .kpis div {
@@ -565,14 +594,18 @@
     .kpis dd { margin: 8px 0 0; font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
 
     @media(max-width: 960px){
-      .proj-grid { grid-template-columns: 1fr; }
       .kpis { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width: 760px){
+      .case { padding: 28px 20px; }
+      .dataset { padding: 16px 18px; }
     }
     @media(max-width: 480px){
       .kpis { grid-template-columns: 1fr; }
     }
     @media print{
-      .proj, .kpis div { box-shadow: none; border: 1px solid #eee; }
+      .kpis div { box-shadow: none; border: 1px solid #eee; }
+      .sql { background: #fff; color: #000; border: 1px solid #ccc; }
     }
   </style>
 </head>
@@ -633,10 +666,6 @@
           <div><dt>5000+</dt><dd>Financial Documents Analyzed</dd></div>
           <div><dt>3</dt><dd>Enterprise Client Onboardings Supported</dd></div>
           <div><dt>50+</dt><dd>Training Sessions &amp; Workshops Delivered</dd></div>
-          <div><dt>22%</dt><dd>Structured Data Accuracy Improvement</dd></div>
-          <div><dt>35%</dt><dd>Reduction in QA Effort</dd></div>
-          <div><dt>50%</dt><dd>Faster Team Onboarding</dd></div>
-          <div><dt>70%</dt><dd>Issue Resolution Improvement</dd></div>
         </dl>
       </div>
     </section>
@@ -687,6 +716,10 @@
             <div class="body">
               <p>QA kept finding header rows, incomplete fund names and other errors in extracted fund names, and long Schedule of Investments lists made manual matching slow.</p>
               <p>I built a Python and Streamlit app. QA uploads the client master list and the extraction output; the app flags exact, partial and no-match results, shows the matching master name alongside, and exports an Excel file for review. It was deployed so QA needed no local setup, and the team used it on sanitized data only. Code is maintained in GitHub.</p>
+              <figure class="shot">
+                <img src="fund-name-validator.png" width="760" height="896" loading="lazy" alt="Fund Name Validator interface: two upload steps for the master fund file and the extraction output, plus an adjustable similarity threshold set to 0.75 for partial matches.">
+                <figcaption>The validator&rsquo;s interface. QA uploads the two files and can tune the similarity threshold for partial matches (default 0.75). No client data shown.</figcaption>
+              </figure>
             </div>
           </details>
         </article>
@@ -699,44 +732,168 @@
           <h2>Analytics Portfolio</h2>
           <p class="sub">Examples of how I use SQL and financial-domain expertise to analyze lending portfolios, operational data and risk indicators.</p>
         </div>
-        <div class="proj-grid">
-          <article class="proj reveal">
-            <h3>Lending Portfolio Analysis</h3>
-            <p class="lbl">Focus</p>
-            <ul>
-              <li>Industry concentration</li>
-              <li>Watchlist exposure</li>
-              <li>Borrower distribution</li>
-              <li>Facility composition</li>
-            </ul>
-            <p class="lbl">Skills</p>
-            <p class="tags"><span>SQL</span><span>Aggregation</span><span>GROUP BY</span><span>Credit Risk Analysis</span></p>
-          </article>
-          <article class="proj reveal" style="transition-delay: 0.1s">
-            <h3>Facility Repricing Analysis</h3>
-            <p class="lbl">Focus</p>
-            <ul>
-              <li>Margin increases</li>
-              <li>Margin reductions</li>
-              <li>Repricing trends</li>
-              <li>Market segment comparisons</li>
-            </ul>
-            <p class="lbl">Skills</p>
-            <p class="tags"><span>SQL Joins</span><span>CASE Statements</span><span>Financial Analysis</span></p>
-          </article>
-          <article class="proj reveal" style="transition-delay: 0.2s">
-            <h3>Maturity Wall Analysis</h3>
-            <p class="lbl">Focus</p>
-            <ul>
-              <li>Debt maturities</li>
-              <li>Refinancing concentrations</li>
-              <li>Industry exposure</li>
-              <li>Risk monitoring</li>
-            </ul>
-            <p class="lbl">Skills</p>
-            <p class="tags"><span>SQL</span><span>Lending Analytics</span><span>Portfolio Analysis</span></p>
-          </article>
-        </div>
+        <p class="dataset reveal">All five analyses run on a synthetic lending portfolio I built in SQLite to practice the monitoring questions credit teams ask every quarter: 100 borrowers across 10 industries, 100 deals ($64.0B committed, $50.0B outstanding across 256 facilities), 30 lenders and 1,035 lender allocations, with quarterly financials, covenant tests and credit events. All names and figures are fictional. Data as of 30 June 2026.</p>
+        <article class="case reveal">
+          <h3>Portfolio Concentration and Stressed Exposure</h3>
+          <p class="res"><strong>Finding:</strong> Ranked by outstanding balance instead of borrower count, the picture changes. Software (15.0%) and Financial Services (13.4%) lead, and about 29% and 28% of their exposure sits in stressed deals. Healthcare Services has the most borrowers but ranks seventh by exposure, with none of it stressed.</p>
+          <details>
+            <summary>See the analysis</summary>
+            <div class="body">
+              <p><strong>Question.</strong> Which industries is the portfolio most exposed to, and how much of that exposure is already under stress?</p>
+              <p><strong>Why it matters.</strong> Credit teams cap sector exposure because a downturn in one industry hits every loan in it at once. Counting borrowers hides the dollars at risk, so exposure has to be measured by outstanding balance. Here, stressed means a deal on the watchlist, in default or restructured. The top three industries by exposure hold 40.4% of the book.</p>
+              <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Industry</th><th>Borrowers</th><th>Outstanding ($mm)</th><th>% of portfolio</th><th>% stressed</th></tr></thead><tbody><tr><td>Software</td><td>10</td><td>7,490</td><td>15.0%</td><td>29.0%</td></tr><tr><td>Financial Services</td><td>9</td><td>6,695</td><td>13.4%</td><td>27.9%</td></tr><tr><td>Industrials</td><td>13</td><td>6,055</td><td>12.1%</td><td>3.3%</td></tr><tr><td>Business Services</td><td>11</td><td>5,470</td><td>10.9%</td><td>1.4%</td></tr><tr><td>Distribution</td><td>10</td><td>5,154</td><td>10.3%</td><td>17.9%</td></tr><tr><td>Consumer</td><td>8</td><td>4,914</td><td>9.8%</td><td>20.8%</td></tr><tr><td>Healthcare Services</td><td>14</td><td>4,324</td><td>8.6%</td><td>0.0%</td></tr><tr><td>Education</td><td>7</td><td>3,683</td><td>7.4%</td><td>1.5%</td></tr><tr><td>Telecom &amp; Media</td><td>7</td><td>3,286</td><td>6.6%</td><td>22.0%</td></tr><tr><td>Environmental Services</td><td>11</td><td>2,968</td><td>5.9%</td><td>28.4%</td></tr></tbody><tfoot><tr><td>Total</td><td>100</td><td>50,039</td><td>100.0%</td><td>15.8%</td></tr></tfoot></table></div>
+              <p class="lbl">Query</p>
+              <pre class="sql"><code>SELECT b.industry,
+       COUNT(DISTINCT b.borrower_id) AS borrowers,
+       ROUND(SUM(f.outstanding_usd_mm)) AS outstanding_mm,
+       ROUND(100.0 * SUM(f.outstanding_usd_mm)
+             / SUM(SUM(f.outstanding_usd_mm)) OVER (), 1) AS pct_of_portfolio,
+       ROUND(100.0 * SUM(CASE WHEN d.deal_status IN (&#x27;Watchlist&#x27;, &#x27;Default&#x27;, &#x27;Restructured&#x27;)
+                              THEN f.outstanding_usd_mm ELSE 0 END)
+             / SUM(f.outstanding_usd_mm), 1) AS pct_stressed
+FROM facilities f
+JOIN deals d     ON d.deal_id = f.deal_id
+JOIN borrowers b ON b.borrower_id = d.borrower_id
+GROUP BY b.industry
+ORDER BY outstanding_mm DESC;</code></pre>
+              <p class="tags"><span>SQL</span><span>Aggregation</span><span>GROUP BY</span><span>Window functions</span><span>Credit Risk Analysis</span></p>
+            </div>
+          </details>
+        </article>
+        <article class="case reveal" style="transition-delay: 0.05s">
+          <h3>Facility Repricing Analysis</h3>
+          <p class="res"><strong>Finding:</strong> 68 of 256 facilities now pay a different margin than at close. 45 stepped up (average +122 bps), and 40 of those sit on watchlist or defaulted deals. 23 were repriced down (average −52 bps), none of them on a stressed deal.</p>
+          <details>
+            <summary>See the analysis</summary>
+            <div class="body">
+              <p><strong>Question.</strong> Which facilities pay a different margin than when they closed, and what does the direction say about the borrower?</p>
+              <p><strong>Why it matters.</strong> A margin step-up usually buys a waiver or amendment for a borrower under pressure. A step-down usually follows an improved credit. Repricing is an early read on where portfolio quality is moving.</p>
+              <p><strong>Cross-check.</strong> The direction matches the credit-event history. 39 of the 45 step-ups sit on deals with a covenant waiver and amendment, and all 23 step-downs sit on deals with a repricing amendment.</p>
+              <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Direction</th><th>Facilities</th><th>Avg change (bps)</th><th>On stressed deals</th></tr></thead><tbody><tr><td>Repriced down</td><td>23</td><td>−52</td><td>0</td></tr><tr><td>Stepped up</td><td>45</td><td>+122</td><td>40</td></tr></tbody></table></div>
+              <p class="lbl">Query</p>
+              <pre class="sql"><code>SELECT CASE WHEN f.current_margin_bps &lt; f.original_margin_bps
+            THEN &#x27;Repriced down&#x27; ELSE &#x27;Stepped up&#x27; END AS direction,
+       COUNT(*) AS facilities,
+       ROUND(AVG(f.current_margin_bps - f.original_margin_bps)) AS avg_change_bps,
+       SUM(CASE WHEN d.deal_status IN (&#x27;Watchlist&#x27;, &#x27;Default&#x27;, &#x27;Restructured&#x27;)
+                THEN 1 ELSE 0 END) AS on_stressed_deals
+FROM facilities f
+JOIN deals d ON d.deal_id = f.deal_id
+WHERE f.current_margin_bps &lt;&gt; f.original_margin_bps
+GROUP BY direction;</code></pre>
+              <p class="lbl">Cross-check against credit events</p>
+              <pre class="sql"><code>SELECT ce.event_type, COUNT(DISTINCT f.facility_id) AS repriced_facilities
+FROM facilities f
+JOIN credit_events ce ON ce.deal_id = f.deal_id
+WHERE f.current_margin_bps &lt;&gt; f.original_margin_bps
+  AND ce.event_type IN (&#x27;Repricing Amendment&#x27;, &#x27;Covenant Waiver &amp; Amendment&#x27;)
+GROUP BY ce.event_type;</code></pre>
+              <p><strong>Pricing by segment.</strong> Measured at close and on first-lien facilities only, so lien priority doesn&rsquo;t distort the comparison, private credit priced about 200 bps wider than broadly syndicated loans, and middle-market bank loans about 150 bps tighter. These are simple averages per facility.</p>
+              <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Market segment</th><th>First-lien facilities</th><th>Avg margin at close (bps)</th></tr></thead><tbody><tr><td>Private Credit</td><td>142</td><td>568</td></tr><tr><td>Broadly Syndicated</td><td>77</td><td>364</td></tr><tr><td>Middle Market Bank</td><td>26</td><td>217</td></tr></tbody></table></div>
+              <pre class="sql"><code>SELECT d.market_segment,
+       COUNT(*) AS facilities,
+       ROUND(AVG(f.original_margin_bps)) AS avg_margin_at_close_bps
+FROM facilities f
+JOIN deals d ON d.deal_id = f.deal_id
+WHERE f.lien_priority = &#x27;First Lien&#x27;
+GROUP BY d.market_segment
+ORDER BY avg_margin_at_close_bps DESC;</code></pre>
+              <p class="tags"><span>SQL Joins</span><span>CASE Statements</span><span>Financial Analysis</span></p>
+            </div>
+          </details>
+        </article>
+        <article class="case reveal" style="transition-delay: 0.1s">
+          <h3>Maturity Wall Analysis</h3>
+          <p class="res"><strong>Finding:</strong> 2028 is the largest wall at $16.1B (32% of outstanding), and 46% of the book matures by the end of 2028. The stressed borrowers peak later: $3.2B in 2030, 28% of that year&rsquo;s maturities.</p>
+          <details>
+            <summary>See the analysis</summary>
+            <div class="body">
+              <p><strong>Question.</strong> How much debt matures each year, and where is refinancing pressure most likely to build?</p>
+              <p><strong>Why it matters.</strong> Large maturity concentrations create liquidity and refinancing risk, but the size of a wall matters less than who has to refinance. A big year of performing borrowers is a different problem from a smaller year weighted toward watchlist names. 27 of the 256 facilities have already had their maturity extended, which has pushed part of the wall out.</p>
+              <p><strong>As of 30 June 2026.</strong> Revolvers with nothing drawn are excluded.</p>
+              <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Maturity year</th><th>Facilities</th><th>Outstanding ($mm)</th><th>% of total</th><th>Stressed ($mm)</th></tr></thead><tbody><tr><td>2026</td><td>8</td><td>1,083</td><td>2.2%</td><td>0</td></tr><tr><td>2027</td><td>31</td><td>5,941</td><td>11.9%</td><td>1,113</td></tr><tr><td>2028</td><td>56</td><td>16,093</td><td>32.2%</td><td>951</td></tr><tr><td>2029</td><td>36</td><td>4,869</td><td>9.7%</td><td>1,528</td></tr><tr><td>2030</td><td>46</td><td>11,235</td><td>22.5%</td><td>3,159</td></tr><tr><td>2031</td><td>22</td><td>6,891</td><td>13.8%</td><td>515</td></tr><tr><td>2032</td><td>5</td><td>3,302</td><td>6.6%</td><td>464</td></tr><tr><td>2033</td><td>3</td><td>624</td><td>1.2%</td><td>155</td></tr></tbody></table></div>
+              <p class="lbl">Query</p>
+              <pre class="sql"><code>SELECT strftime(&#x27;%Y&#x27;, f.maturity_date) AS maturity_year,
+       COUNT(*) AS facilities,
+       ROUND(SUM(f.outstanding_usd_mm)) AS outstanding_mm,
+       ROUND(100.0 * SUM(f.outstanding_usd_mm)
+             / SUM(SUM(f.outstanding_usd_mm)) OVER (), 1) AS pct_of_total,
+       ROUND(SUM(CASE WHEN d.deal_status IN (&#x27;Watchlist&#x27;, &#x27;Default&#x27;, &#x27;Restructured&#x27;)
+                      THEN f.outstanding_usd_mm ELSE 0 END)) AS stressed_mm
+FROM facilities f
+JOIN deals d ON d.deal_id = f.deal_id
+WHERE f.outstanding_usd_mm &gt; 0
+GROUP BY maturity_year
+ORDER BY maturity_year;</code></pre>
+              <p class="tags"><span>SQL</span><span>Lending Analytics</span><span>Portfolio Analysis</span><span>Window functions</span></p>
+            </div>
+          </details>
+        </article>
+        <article class="case reveal" style="transition-delay: 0.15s">
+          <h3>Covenant Headroom Early Warning</h3>
+          <p class="res"><strong>Finding:</strong> At the latest test, all 8 covenant failures sit on defaulted deals. 14 of 21 watchlist tests have under 10% headroom, while 65 of 66 performing tests have more than 20%.</p>
+          <details>
+            <summary>See the analysis</summary>
+            <div class="body">
+              <p><strong>Question.</strong> Which borrowers are closest to breaching a financial covenant, and does thin headroom line up with the credits we already worry about?</p>
+              <p><strong>Why it matters.</strong> Headroom is the distance between a borrower&rsquo;s actual ratio and the covenant level. Monitoring teams review it every quarter because it shows deterioration before a breach, waiver or default.</p>
+              <p><strong>Reading the result.</strong> A 20% headroom screen separates stressed from performing credits cleanly in this dataset. Real data is noisier, so in practice I would track the quarter-on-quarter trend as well as the level. The table covers the latest test of each covenant and excludes springing covenants that weren&rsquo;t tested.</p>
+              <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Deal status</th><th>Tests</th><th>Failed</th><th>Under 10%</th><th>10 to 20%</th><th>Over 20%</th><th>Lowest headroom</th></tr></thead><tbody><tr><td>Default</td><td>8</td><td>8</td><td>8</td><td>0</td><td>0</td><td>-102.1%</td></tr><tr><td>Watchlist</td><td>21</td><td>0</td><td>14</td><td>6</td><td>1</td><td>-9.1%</td></tr><tr><td>Restructured</td><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td><td>44.0%</td></tr><tr><td>Performing</td><td>66</td><td>0</td><td>0</td><td>1</td><td>65</td><td>18.9%</td></tr><tr><td>Repaid</td><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td><td>33.5%</td></tr></tbody></table></div>
+              <p class="lbl">Query</p>
+              <pre class="sql"><code>SELECT d.deal_status,
+       COUNT(*) AS tests,
+       SUM(t.test_result = &#x27;Fail&#x27;) AS failed,
+       SUM(t.headroom_pct &lt; 10) AS under_10,
+       SUM(t.headroom_pct &gt;= 10 AND t.headroom_pct &lt; 20) AS from_10_to_20,
+       SUM(t.headroom_pct &gt;= 20) AS over_20,
+       ROUND(MIN(t.headroom_pct), 1) AS lowest_headroom_pct
+FROM covenant_tests t
+JOIN deals d ON d.deal_id = t.deal_id
+WHERE (t.fin_cov_id, t.period_end) IN
+      (SELECT fin_cov_id, MAX(period_end)
+       FROM covenant_tests GROUP BY fin_cov_id)
+  AND t.headroom_pct IS NOT NULL
+GROUP BY d.deal_status
+ORDER BY CASE d.deal_status WHEN &#x27;Default&#x27; THEN 1 WHEN &#x27;Watchlist&#x27; THEN 2
+                            WHEN &#x27;Restructured&#x27; THEN 3 WHEN &#x27;Performing&#x27; THEN 4 ELSE 5 END;</code></pre>
+              <p class="tags"><span>SQL</span><span>Subqueries</span><span>Conditional aggregation</span><span>Covenant Monitoring</span></p>
+            </div>
+          </details>
+        </article>
+        <article class="case reveal" style="transition-delay: 0.2s">
+          <h3>Lender Exposure to Stressed Credits</h3>
+          <p class="res"><strong>Finding:</strong> Banks hold the most dollars but the least stress: 10.9% of their commitments are in stressed deals, spread across about 39 borrowers each. BDCs are at 29.5% and direct lenders at 21.9%, each lending to far fewer borrowers (11 and 14 on average).</p>
+          <details>
+            <summary>See the analysis</summary>
+            <div class="body">
+              <p><strong>Question.</strong> Which types of lender carry the most exposure to stressed credits, and how diversified are they?</p>
+              <p><strong>Why it matters.</strong> When a deal moves to the watchlist, every lender in the syndicate is exposed, but not equally. A lender&rsquo;s facility count says little about diversification. What matters is how many different borrowers it lends to and how much of its book is already stressed. At the single-lender level the most exposed are Copperleaf Direct Lending (35.9%) and Ashford Lane Capital BDC (34.4%). Exposure here is measured on commitments, not funded balances.</p>
+              <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Lender type</th><th>Lenders</th><th>Avg borrowers per lender</th><th>Commitments ($mm)</th><th>% in stressed deals</th></tr></thead><tbody><tr><td>BDC</td><td>3</td><td>10.7</td><td>4,651</td><td>29.5%</td></tr><tr><td>Direct Lender</td><td>9</td><td>14.2</td><td>15,903</td><td>21.9%</td></tr><tr><td>Credit Fund</td><td>5</td><td>21.0</td><td>9,501</td><td>13.1%</td></tr><tr><td>Bank</td><td>6</td><td>38.7</td><td>19,635</td><td>10.9%</td></tr><tr><td>CLO Manager</td><td>5</td><td>20.0</td><td>9,807</td><td>7.4%</td></tr><tr><td>Insurance</td><td>2</td><td>23.0</td><td>4,513</td><td>4.3%</td></tr></tbody></table></div>
+              <p class="lbl">Query</p>
+              <pre class="sql"><code>WITH lender_stress AS (
+  SELECT fa.lender_id,
+         COUNT(DISTINCT d.borrower_id) AS borrowers,
+         SUM(fa.commitment_usd_mm) AS total_mm,
+         SUM(CASE WHEN d.deal_status IN (&#x27;Watchlist&#x27;, &#x27;Default&#x27;, &#x27;Restructured&#x27;)
+                  THEN fa.commitment_usd_mm ELSE 0 END) AS stressed_mm
+  FROM facility_allocations fa
+  JOIN facilities f ON f.facility_id = fa.facility_id
+  JOIN deals d      ON d.deal_id = f.deal_id
+  GROUP BY fa.lender_id
+)
+SELECT l.lender_type,
+       COUNT(*) AS lenders,
+       ROUND(AVG(s.borrowers), 1) AS avg_borrowers,
+       ROUND(SUM(s.total_mm)) AS commitments_mm,
+       ROUND(100.0 * SUM(s.stressed_mm) / SUM(s.total_mm), 1) AS pct_stressed
+FROM lender_stress s
+JOIN lenders l ON l.lender_id = s.lender_id
+GROUP BY l.lender_type
+ORDER BY pct_stressed DESC;</code></pre>
+              <p class="tags"><span>SQL</span><span>CTEs</span><span>Multi-table joins</span><span>Portfolio Analysis</span></p>
+            </div>
+          </details>
+        </article>
       </div>
     </section>
 
