@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Subhasis Patnaik | Process Lead, AI Financial Data Operations</title>
-  <meta name="description" content="Subhasis Patnaik turns U.S. credit agreements into structured data. Process Lead at Forage AI with 6+ years in financial operations and data. Based in India (IST), open to remote roles.">
+  <title>Subhasis Patnaik | Financial Data Operations, Lending &amp; Analytics</title>
+  <meta name="description" content="Financial Data Operations professional with experience across lending, credit documentation, analytics, process improvement and AI-enabled financial workflows.">
   <link rel="canonical" href="https://subhasispatnaik08.github.io/subhasis-portfolio/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Subhasis Patnaik | Process Lead, AI Financial Data Operations">
-  <meta property="og:description" content="I turn U.S. credit agreements into data that analysts and AI can trust.">
+  <meta property="og:title" content="Subhasis Patnaik | Financial Data Operations, Lending &amp; Analytics">
+  <meta property="og:description" content="Financial Data Operations professional with experience across lending, credit documentation, analytics, process improvement and AI-enabled financial workflows.">
   <meta property="og:url" content="https://subhasispatnaik08.github.io/subhasis-portfolio/">
   <meta name="twitter:card" content="summary">
   <meta name="theme-color" content="#f8fafc">
@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Subhasis Patnaik","jobTitle":"Process Lead, AI Financial Data Operations","worksFor":{"@type":"Organization","name":"Forage AI"},"url":"https://subhasispatnaik08.github.io/subhasis-portfolio/","sameAs":["https://www.linkedin.com/in/subhasis-patnaik/"],"knowsAbout":["U.S. credit agreements","Covenant analysis","Financial data extraction","LLM prompt engineering","Loan operations"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Subhasis Patnaik","jobTitle":"Financial Data Operations Professional","url":"https://subhasispatnaik08.github.io/subhasis-portfolio/","sameAs":["https://www.linkedin.com/in/subhasis-patnaik/"],"knowsAbout":["Financial data operations","Lending and credit documentation","Financial analytics","SQL","Process improvement","AI-enabled financial workflows","U.S. credit agreements","Loan operations"]}</script>
 
   <style>
     :root {
@@ -531,6 +531,49 @@
       .out span:nth-child(4) { animation-delay: 2.1s; }
       .out span:nth-child(5) { animation-delay: 2.3s; }
     }
+    /* V2 additions: reuse existing tokens and card language */
+    .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .proj {
+      background: var(--card-bg); padding: 32px; border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card); border: 1px solid var(--rule);
+      transition: transform 0.3s var(--easing), box-shadow 0.3s var(--easing), opacity 0.8s var(--easing);
+    }
+    .proj:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .proj h3 { font-size: 1.3rem; margin-bottom: 20px; }
+    .proj ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .proj li { padding-bottom: 4px; }
+    .lbl {
+      margin: 20px 0 8px; font-size: 0.8rem; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .proj h3 + .lbl { margin-top: 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+    .tags span {
+      font-size: 0.8rem; font-weight: 600; color: var(--accent);
+      background: rgba(37, 99, 235, 0.1); padding: 4px 12px; border-radius: 999px;
+    }
+    .tl .tags { margin: 0 0 16px; }
+
+    .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 0; }
+    .kpis div {
+      background: var(--card-bg); padding: 32px 24px; border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--easing), box-shadow 0.3s var(--easing);
+    }
+    .kpis div:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .kpis dt { font: 700 2.5rem/1.2 var(--serif); color: var(--accent); }
+    .kpis dd { margin: 8px 0 0; font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
+
+    @media(max-width: 960px){
+      .proj-grid { grid-template-columns: 1fr; }
+      .kpis { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width: 480px){
+      .kpis { grid-template-columns: 1fr; }
+    }
+    @media print{
+      .proj, .kpis div { box-shadow: none; border: 1px solid #eee; }
+    }
   </style>
 </head>
 <body>
@@ -542,9 +585,10 @@
       <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav class="site-nav" id="site-nav" aria-label="Main">
         <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#impact">Impact</a>
+        <a href="#career">Career</a>
         <a href="#credentials">Credentials</a>
-        <a href="#notes">Notes</a>
         <a class="pill" href="#contact">Contact</a>
       </nav>
     </div>
@@ -554,9 +598,10 @@
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div class="reveal">
-          <p class="role">Process Lead, AI Financial Data</p>
-          <h1>I turn U.S. credit agreements into data that analysts and AI can trust.</h1>
-          <p class="lead">I read the covenants, define how each provision should be captured, and make sure the extracted data matches the contract. Six years across loan operations, financial documents and AI data quality.</p>
+          <p class="role">Financial Data Operations • Lending • Analytics • AI</p>
+          <h1>Transforming Complex Financial Information Into Reliable Data, Insights and Business Decisions.</h1>
+          <p class="lead">I have 6+ years of experience across U.S. loan operations, credit documentation, financial data analysis and AI-enabled workflows.</p>
+          <p class="lead" style="margin-top: 16px">My work focuses on transforming complex financial information into structured data, operational efficiencies and actionable insights that organizations can trust.</p>
           <div class="actions">
             <a class="btn solid" href="mailto:subhasispatnaik08@gmail.com">Email me</a>
             <a class="btn" href="Subhasis-Patnaik-CV.pdf">Download CV</a>
@@ -584,10 +629,14 @@
       
       <div class="wrap reveal" style="transition-delay: 0.2s">
         <dl class="proof">
-          <div><dt>15 to &lt;5 min</dt><dd>Fund-name matching per Schedule of Investments document via automated validator.</dd></div>
-          <div><dt>78% to 92%</dt><dd>ML extraction accuracy boost through precise annotation and QA feedback loops.</dd></div>
-          <div><dt>35% less QA</dt><dd>Effort saved by reconciling 1M+ records natively with VBA and Apps Script.</dd></div>
-          <div><dt>50% faster</dt><dd>Onboarding speeds via structured SOPs and covenant interpretation guides.</dd></div>
+          <div><dt>6+</dt><dd>Years Across Financial Operations &amp; Data</dd></div>
+          <div><dt>5000+</dt><dd>Financial Documents Analyzed</dd></div>
+          <div><dt>3</dt><dd>Enterprise Client Onboardings Supported</dd></div>
+          <div><dt>50+</dt><dd>Training Sessions &amp; Workshops Delivered</dd></div>
+          <div><dt>22%</dt><dd>Structured Data Accuracy Improvement</dd></div>
+          <div><dt>35%</dt><dd>Reduction in QA Effort</dd></div>
+          <div><dt>50%</dt><dd>Faster Team Onboarding</dd></div>
+          <div><dt>70%</dt><dd>Issue Resolution Improvement</dd></div>
         </dl>
       </div>
     </section>
@@ -644,14 +693,78 @@
       </div>
     </section>
 
-    <section class="sec" id="experience">
+    <section class="sec" id="analytics">
       <div class="wrap">
         <div class="sec-header reveal">
-          <h2>Experience</h2>
+          <h2>Analytics Portfolio</h2>
+          <p class="sub">Examples of how I use SQL and financial-domain expertise to analyze lending portfolios, operational data and risk indicators.</p>
+        </div>
+        <div class="proj-grid">
+          <article class="proj reveal">
+            <h3>Lending Portfolio Analysis</h3>
+            <p class="lbl">Focus</p>
+            <ul>
+              <li>Industry concentration</li>
+              <li>Watchlist exposure</li>
+              <li>Borrower distribution</li>
+              <li>Facility composition</li>
+            </ul>
+            <p class="lbl">Skills</p>
+            <p class="tags"><span>SQL</span><span>Aggregation</span><span>GROUP BY</span><span>Credit Risk Analysis</span></p>
+          </article>
+          <article class="proj reveal" style="transition-delay: 0.1s">
+            <h3>Facility Repricing Analysis</h3>
+            <p class="lbl">Focus</p>
+            <ul>
+              <li>Margin increases</li>
+              <li>Margin reductions</li>
+              <li>Repricing trends</li>
+              <li>Market segment comparisons</li>
+            </ul>
+            <p class="lbl">Skills</p>
+            <p class="tags"><span>SQL Joins</span><span>CASE Statements</span><span>Financial Analysis</span></p>
+          </article>
+          <article class="proj reveal" style="transition-delay: 0.2s">
+            <h3>Maturity Wall Analysis</h3>
+            <p class="lbl">Focus</p>
+            <ul>
+              <li>Debt maturities</li>
+              <li>Refinancing concentrations</li>
+              <li>Industry exposure</li>
+              <li>Risk monitoring</li>
+            </ul>
+            <p class="lbl">Skills</p>
+            <p class="tags"><span>SQL</span><span>Lending Analytics</span><span>Portfolio Analysis</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec alt" id="impact">
+      <div class="wrap">
+        <div class="sec-header reveal">
+          <h2>Business Impact</h2>
+        </div>
+        <dl class="kpis reveal">
+          <div><dt>22%</dt><dd>Improved Structured Data Accuracy</dd></div>
+          <div><dt>35%</dt><dd>Reduction in QA Effort</dd></div>
+          <div><dt>50%</dt><dd>Faster Team Onboarding</dd></div>
+          <div><dt>70%</dt><dd>Improved Resolution Time</dd></div>
+          <div><dt>99.7%</dt><dd>Operational Accuracy</dd></div>
+          <div><dt>95%</dt><dd>GL Exceptions Resolved Within SLA</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sec" id="career">
+      <div class="wrap">
+        <div class="sec-header reveal">
+          <h2>Career Journey</h2>
+          <p class="sub">From loan operations at Northern Trust to leading AI-enabled financial-data initiatives at Forage AI, my career has focused on transforming complex financial information into trusted operational and analytical outcomes.</p>
         </div>
         <ol class="tl">
           <li class="reveal">
-            <p class="when">Oct 2025 to present</p>
+            <p class="when">Oct 2025 to Nov 2026</p>
             <h3>Process Lead, AI Financial Data Operations</h3>
             <p class="org">Forage AI (Remote)</p>
             <ul>
@@ -684,10 +797,14 @@
             <p class="when">Jun 2020 to Dec 2022</p>
             <h3>U.S. Loan Operations Analyst II</h3>
             <p class="org">Northern Trust, Bangalore</p>
+            <p class="tags"><span>Loan Operations</span><span>Operational Controls</span><span>Payments</span><span>Reconciliations</span><span>Risk Awareness</span><span>Service Operations</span></p>
             <ul>
+              <li>Released a time-critical $23M closing wire before cutoff by coordinating across teams to clear internal process delays.</li>
+              <li>Stopped an erroneous $8.5M wire at final authorization by catching a critical discrepancy.</li>
               <li>Kept 99.7% accuracy across 300+ loan accounts and cleared 95% of GL exceptions within a 24-hour SLA.</li>
-              <li>Released a time-critical $23M closing wire before cutoff, and stopped an erroneous $8.5M wire at final authorization.</li>
-              <li>Insurance documentation reviews found discrepancies in 12% of vendor-processed files. Also handled escrow, flood, hazard and wind disbursements and tax-delinquency escalations.</li>
+              <li>Processed 120 to 150 daily transactions and Critical Control Reports, with a 98% first-contact resolution rate on client-impacting exceptions.</li>
+              <li>Worked with ACH and wire investigations teams to trace and redirect funds. Also handled escrow, flood, hazard and wind disbursements and tax-delinquency escalations.</li>
+              <li>Insurance documentation reviews found discrepancies in 12% of vendor-processed files.</li>
             </ul>
           </li>
         </ol>
@@ -708,46 +825,26 @@
           <p class="plain">Bachelor of Commerce (Honors), Vikram Dev University, 2019</p>
         </div>
         <div class="reveal" style="transition-delay: 0.15s">
-          <h2>Skills</h2>
+          <h2>Core Expertise</h2>
           <dl class="skills">
-            <dt>Credit and lending</dt>
-            <dd>Credit agreement analysis, covenants, loan servicing, GL reconciliation, ACH and wire investigations</dd>
-            <dt>Data and AI</dt>
-            <dd>LLM prompt engineering, intelligent document processing, structured extraction, AI output validation, taxonomy design</dd>
-            <dt>Process</dt>
-            <dd>SOPs, knowledge management, root cause analysis, UAT, cross-functional delivery</dd>
-            <dt>Tools</dt>
-            <dd>Excel, SQL, Power Query, VBA, Google Apps Script, Python, Jira, Confluence, Slack, Notion</dd>
+            <dt>Financial Data Operations</dt>
+            <dd>Credit Agreements, Financial Statements, SEC Filings, Data Quality, Structured Extraction</dd>
+            <dt>Lending &amp; Credit</dt>
+            <dd>Loan Servicing, Covenants, Credit Documentation, Wire Investigations, GL Reconciliation</dd>
+            <dt>Analytics</dt>
+            <dd>SQL, Excel, Power Query, Reporting, Data Validation, Business Analysis</dd>
+            <dt>AI &amp; Automation</dt>
+            <dd>Document Intelligence, Automation, Prompt Design, Annotation, QA Frameworks</dd>
           </dl>
         </div>
-      </div>
-    </section>
-
-    <section class="sec" id="notes">
-      <div class="wrap">
-        <div class="sec-header reveal">
-          <h2>Notes</h2>
-          <p class="sub">Short explainers from the work. The examples are generalized and not taken from client documents.</p>
-        </div>
-        
-        <article class="note reveal">
-          <h3>Why "excluding" is the costliest word in a debt basket</h3>
-          <p>A cap of the greater of a fixed amount and a percentage of EBITDA reads cleanly. Then a parenthetical removes ratio debt from the count, and a separate section removes more. An extraction that reads only the main clause overstates capacity.</p>
-          <p>The fix is procedural: trace the definition, the parentheticals and the separate exclusions before deciding the final treatment.</p>
-        </article>
-        
-        <article class="note reveal">
-          <h3>When an AI model stops at the first answer</h3>
-          <p>In a clause that needs every applicable basket, one inclusion in the main clause can end the search while a defined term elsewhere holds the rest. Reading the model's reasoning against the source shows where it stopped.</p>
-          <p>The fix is a rule, such as follow defined terms and capture every selection, plus one example. It is not a patch for a single document.</p>
-        </article>
       </div>
     </section>
 
     <section class="sec contact reveal" id="contact">
       <div>
         <h2>Let's talk</h2>
-        <p>I'm looking for remote roles where reading the contract and getting the data right is the job: credit analysis, lending operations, financial data and document intelligence.</p>
+        <p>I'm interested in opportunities across financial data operations, lending, analytics, business analysis and AI-enabled financial intelligence.</p>
+        <p>I enjoy solving problems where financial expertise, structured thinking and data quality directly influence business decisions.</p>
         <div class="actions">
           <a class="btn solid" href="mailto:subhasispatnaik08@gmail.com">subhasispatnaik08@gmail.com</a>
           <a class="btn" href="https://www.linkedin.com/in/subhasis-patnaik/" target="_blank" rel="noopener">LinkedIn</a>
